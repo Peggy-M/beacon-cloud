@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @Author: peppa
- * @Description: TODO
+ * @Description: 启动类测试
  * @Date: Created in 23:28 2024/8/27
  */
 @SpringBootTest
