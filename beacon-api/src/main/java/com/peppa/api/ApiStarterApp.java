@@ -1,4 +1,4 @@
-package com.peppa;
+package com.peppa.api;
 
 
 import org.springframework.boot.SpringApplication;
@@ -7,8 +7,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class App {
+public class ApiStarterApp {
     public static void main(String[] args) {
-        SpringApplication.run(App.class,args);
+        SpringApplication.run(ApiStarterApp.class,args);
     }
 }
