@@ -1,7 +1,9 @@
 package com.peppa.api.controller;
 
 import com.peppa.api.form.SingleSendForm;
+import com.peppa.api.server.SmsServer;
 import com.peppa.common.core.domain.AjaxResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +21,13 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/sms")
 public class SmsController {
-    @PostMapping(value = "/single_send", produces = "application/json;charset=utf-8")
-    public AjaxResult singleSend(@RequestBody @Validated SingleSendForm singleSendForm, BindingResult bindingResult, HttpServletRequest req) {
-        return null;
+
+    @Autowired
+    SmsServer smsServer;
+
+    @PostMapping(value = "/singleSend", produces = "application/json;charset=utf-8")
+    public AjaxResult singleSend(@RequestBody @Validated SingleSendForm singleSendForm, BindingResult bindingResult, HttpServletRequest request) {
+        return smsServer.singleSend(singleSendForm, bindingResult, request);
     }
+
 }
