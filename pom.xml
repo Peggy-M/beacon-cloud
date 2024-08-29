@@ -9,6 +9,7 @@
     <modules>
         <module>beacon-api</module>
         <module>beacon-common</module>
+        <module>beacon-cache</module>
     </modules>
 
     <parent>

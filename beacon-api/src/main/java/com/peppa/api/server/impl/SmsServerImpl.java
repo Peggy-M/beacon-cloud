@@ -30,7 +30,7 @@ public class SmsServerImpl implements SmsServer {
     /**
      * 客户端IP地址的请求头信息，多个用','隔开。
      */
-    @Value("${headers}")
+//    @Value("${headers}")
     private String headers;
 
     /**
