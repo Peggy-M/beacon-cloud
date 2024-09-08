@@ -7,10 +7,10 @@ import com.peppa.common.core.domain.AjaxResult;
 import com.peppa.common.core.enums.ExceptionEnums;
 import com.peppa.common.core.model.StandardSubmit;
 import com.peppa.common.core.utils.SnowFlakeUtil;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
@@ -30,7 +30,7 @@ public class SmsServerImpl implements SmsServer {
     /**
      * 客户端IP地址的请求头信息，多个用','隔开。
      */
-//    @Value("${headers}")
+    @Value("${headers}")
     private String headers;
 
     /**
@@ -61,7 +61,7 @@ public class SmsServerImpl implements SmsServer {
         //=========================获取真实的IP地址=========================================
         String ip = this.getRealIP(req);
 
-        //=========================构建StandardSubmit，各种封装校验=========================================
+        //=========================构建StandardSubmit，各种封装校验==========================
         StandardSubmit submit = new StandardSubmit();
         submit.setRealIP(ip);
         submit.setApikey(singleSendForm.getApikey());
@@ -70,7 +70,7 @@ public class SmsServerImpl implements SmsServer {
         submit.setState(singleSendForm.getState());
         submit.setUid(singleSendForm.getUid());
 
-        //=========================调用策略模式的校验链=========================================
+        //=========================调用策略模式的校验链========================================
         checkFilterContext.check(submit);
 
         //========================基于雪花算法生成唯一id，并添加到StandardSubmit对象中，并设置发送时间=========================================

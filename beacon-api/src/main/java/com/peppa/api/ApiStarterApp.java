@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableFeignClients
+@EnableFeignClients
 @ComponentScan(basePackages = { "com.peppa.api", "com.peppa.common.core"})
 public class ApiStarterApp {
     public static void main(String[] args) {
