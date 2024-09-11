@@ -1,16 +1,23 @@
-# 服务名称
+# 服务名
 spring:
   application:
-    name: beacon-api
-  # 多环境
-  profiles:
-    active: dev
-  # nacos注册中心地址
+    name: beacon-test
+  # nacos地址
   cloud:
     nacos:
       discovery:
         server-addr: 47.120.25.129:8848
-      # nacos配置中心地址:
-      config:
-        server-addr: 47.120.25.129:8848
-        file-extension: yaml
+  # datasource
+  datasource:
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://43.136.43.89:3306/beacon_cloud?characterEncoding=utf-8
+    username: root
+    password: xpy3464..
+# 端口号
+server:
+  port: 20000
+
+# mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
