@@ -31,4 +31,20 @@ public class CacheController {
         log.info("【缓存模块】 sadd方法，存储key = {}，存储value = {}", key, value);
         redisClient.sAdd(key,value);
     }
+
+    @GetMapping("/cache/hgetall/{key}")
+    public Map hGetAll(@PathVariable(value = "key")String key){
+        log.info("【缓存模块】 hGetAll方法，获取key ={} 的数据", key);
+        Map<String, Object> value = redisClient.hGetAll(key);
+        log.info("【缓存模块】 hGetAll方法，获取key ={} 的数据 value = {}", key,value);
+        return value;
+    }
+
+    @GetMapping("/cache/hget/{key}/{field}")
+    public Object hget(@PathVariable(value = "key")String key,@PathVariable(value = "field")String field){
+        log.info("【缓存模块】 hget方法，获取key ={}，field = {}的数据", key,field);
+        Object value = redisClient.hGet(key, field);
+        log.info("【缓存模块】 hGetAll方法，获取key ={}，field = {} 的数据 value = {}", key,field,value);
+        return value;
+    }
 }
