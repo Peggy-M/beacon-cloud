@@ -23,7 +23,7 @@ import java.time.format.DateTimeFormatter;
  * @Description: 设置RedisTemplate的序列化方式
  * @Date: Created in 18:45 2024/8/29
  */
-@Configuration
+//@Configuration
 public class RedisConfig {
 
     @Bean

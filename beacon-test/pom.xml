@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>beacon-test</artifactId>
+    <description>为了快速落地核心业务，在这个test项目中将MySQL中的数据，同步到redis缓存，基于Cache模块去写入</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

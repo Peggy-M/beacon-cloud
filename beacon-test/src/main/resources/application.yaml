@@ -10,7 +10,7 @@ spring:
   # datasource
   datasource:
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://43.136.43.89:3306/beacon_cloud?characterEncoding=utf-8
+    url: jdbc:mysql://43.136.43.89:3306/beacon?characterEncoding=utf-8&useSSL=false
     username: root
     password: xpy3464..
 # 端口号
