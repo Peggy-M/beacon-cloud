@@ -2,15 +2,14 @@ package com.peppa;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.peppa.test.TestStarterApp;
 import com.peppa.test.client.CacheClient;
 import com.peppa.test.entity.ClientBusiness;
 import com.peppa.test.mapper.ClientBusinessMapper;
-import com.peppa.test.TestStarterApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Map;

@@ -1,5 +1,7 @@
 package com.peppa.api.filter;
 
+import com.peppa.common.core.model.StandardSubmit;
+
 /**
  * @Author: peppa
  * @Description: 责任链策略模式的父接口
@@ -9,8 +11,8 @@ public interface CheckFilter {
 
     /**
      * 校验
-     * @param obj 校验对象
+     * @param submit 校验对象
      */
-    void check(Object obj);
+     void check(StandardSubmit submit);
 
 }
